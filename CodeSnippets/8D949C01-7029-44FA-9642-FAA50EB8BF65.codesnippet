@@ -3,23 +3,25 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>fie</string>
+	<string>fis</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>ClassImplementation</string>
+		<string>CodeBlock</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>- (BOOL)isFileExist:(NSString *)filePath
+	<string>- (unsigned long long)isFileSize:(NSString *)filePath
 {
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    return [fileManager fileExistsAtPath:filePath];
-}</string>
+NSFileManager *fileManager = [[NSFileManager alloc] init];
+NSDictionary *dict = [fileManager attributesOfItemAtPath:filePath error:nil];
+return (unsigned long long)[dict fileSize];
+}
+</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>5623C1B6-ACE8-4297-BF0A-EE12EE267926</string>
+	<string>8D949C01-7029-44FA-9642-FAA50EB8BF65</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>file is exist</string>
+	<string>file is size</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
